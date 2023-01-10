@@ -4,7 +4,7 @@
 ## Usage
 
 ```
-% ./mackerel-plugin-dns-synthetic --prefix dns8 -H ns1 -H ns2 -Q test.localhost. -E 192.0.2.1 --timeout 5s
+% ./mackerel-plugin-dns-synthetic --prefix dns -H ns1 -H ns2 -Q example.com. -E 192.0.0.1 --timeout 5s
 dns8-synthetic.service.available        100     1672992548
 dns8-synthetic.status.error     0       1672992548
 dns8-synthetic.status.success   2       1672992548
