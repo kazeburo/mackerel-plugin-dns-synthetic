@@ -35,6 +35,7 @@ type Opt struct {
 	Question string        `short:"Q" long:"question" default:"example.com." description:"Question hostname"`
 	Expect   string        `short:"E" long:"expect" default:"" description:"Expect string in result"`
 	Timeout  time.Duration `long:"timeout" default:"5s" description:"Timeout"`
+	Try      int           `long:"try" default:"1" description:"Number of resoluitions"`
 }
 
 func (o *Opt) MetricKeyPrefix() string {
@@ -109,32 +110,36 @@ type response struct {
 }
 
 func (o *Opt) FetchMetrics() (map[string]float64, error) {
-	c := make(chan *response, len(o.Hosts))
+	c := make(chan *response, len(o.Hosts)*o.Try)
 	for _, host := range o.Hosts {
 		h := host
 		go func() {
-			rtt, err := o.ResolveOnce(h)
-			c <- &response{
-				rtt:  rtt,
-				host: h,
-				err:  err,
+			for i := 0; i < o.Try; i++ {
+				rtt, err := o.ResolveOnce(h)
+				c <- &response{
+					rtt:  rtt,
+					host: h,
+					err:  err,
+				}
 			}
 		}()
 	}
 	onError := float64(0)
 	onSuccess := float64(0)
 	rtts := make([]float64, 0)
-	for range o.Hosts {
-		res := <-c
-		if res.rtt != nil {
-			rtts = append(rtts, float64(res.rtt.Milliseconds()))
+	for i := 0; i < o.Try; i++ {
+		for range o.Hosts {
+			res := <-c
+			if res.rtt != nil {
+				rtts = append(rtts, float64(res.rtt.Milliseconds()))
+			}
+			if res.err != nil {
+				log.Printf("%v on %s:%s", res.err, res.host, o.Port)
+				onError++
+				continue
+			}
+			onSuccess++
 		}
-		if res.err != nil {
-			log.Printf("%v on %s:%s", res.err, res.host, o.Port)
-			onError++
-			continue
-		}
-		onSuccess++
 	}
 	result := map[string]float64{}
 	if onSuccess > 0 {

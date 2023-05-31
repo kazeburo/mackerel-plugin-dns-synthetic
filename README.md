@@ -5,7 +5,7 @@
 
 ```
 % ./mackerel-plugin-dns-synthetic --prefix dns -H ns1 -H ns2 -Q example.com. -E 192.0.0.1 --timeout 5s
-dns8-synthetic.service.available        100     1672992548
+dns8-synthetic.service.available        100     1672992548 # 0 if all resolutions were error
 dns8-synthetic.status.error     0       1672992548
 dns8-synthetic.status.success   2       1672992548
 dns8-synthetic.rtt.max  28      1672992548
@@ -27,6 +27,7 @@ Application Options:
   -Q, --question=          Question hostname (default: example.com.)
   -E, --expect=            Expect string in result
       --timeout=           Timeout (default: 5s)
+      --try=               Number of resoluitions (default: 1)
 
 Help Options:
   -h, --help               Show this help message
