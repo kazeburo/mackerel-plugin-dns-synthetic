@@ -52,7 +52,8 @@ func (o *Opt) GraphDefinition() map[string]mp.Graphs {
 			Label: labelPrefix + ": Available",
 			Unit:  mp.UnitPercentage,
 			Metrics: []mp.Metrics{
-				{Name: "available", Label: "available", Diff: false, Stacked: true},
+				{Name: "available", Label: "Available", Diff: false, Stacked: false},
+				{Name: "success-rate", Label: "SuccessRate", Diff: false, Stacked: false},
 			},
 		},
 		"status": {
