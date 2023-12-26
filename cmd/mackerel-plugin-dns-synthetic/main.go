@@ -148,7 +148,7 @@ func (o *Opt) FetchMetrics() (map[string]float64, error) {
 	} else {
 		result["available"] = 0
 	}
-	result["success-rate"] = onSuccess / float64(o.Try)
+	result["success-rate"] = (onSuccess / float64(o.Try*len(o.Hosts))) * 100.0
 	result["error"] = onError
 	result["success"] = onSuccess
 	if len(rtts) > 0 {
