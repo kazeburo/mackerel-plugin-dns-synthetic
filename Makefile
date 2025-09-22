@@ -18,8 +18,3 @@ check:
 
 clean:
 	rm -rf mackerel-plugin-dns-synthetic
-
-tag:
-	git tag v${VERSION}
-	git push origin v${VERSION}
-	git push origin main
