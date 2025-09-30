@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.8](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.7...v0.0.8) - 2025-09-30
+- add interval option. parallel every resolvation by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/3
+
 ## [v0.0.7](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.6...v0.0.7) - 2025-09-22
 - use tagpr by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/1
 
