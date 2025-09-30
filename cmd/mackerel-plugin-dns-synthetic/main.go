@@ -116,7 +116,6 @@ func (o *Opt) FetchMetrics() (map[string]float64, error) {
 	for _, host := range o.Hosts {
 		h := host
 		for i := 0; i < o.Try; i++ {
-			<-time.After(o.Interval)
 			go func() {
 				rtt, err := o.ResolveOnce(h)
 				c <- &response{
@@ -125,6 +124,7 @@ func (o *Opt) FetchMetrics() (map[string]float64, error) {
 					err:  err,
 				}
 			}()
+			time.Sleep(o.Interval)
 		}
 	}
 	onError := float64(0)
