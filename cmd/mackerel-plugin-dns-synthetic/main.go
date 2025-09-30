@@ -36,6 +36,7 @@ type Opt struct {
 	Expect   string        `short:"E" long:"expect" default:"" description:"Expect string in result"`
 	Timeout  time.Duration `long:"timeout" default:"5s" description:"Timeout"`
 	Try      int           `long:"try" default:"1" description:"Number of resoluitions"`
+	Interval time.Duration `long:"interval" default:"100ms" description:"Interval between retries."`
 }
 
 func (o *Opt) MetricKeyPrefix() string {
@@ -114,16 +115,17 @@ func (o *Opt) FetchMetrics() (map[string]float64, error) {
 	c := make(chan *response, len(o.Hosts)*o.Try)
 	for _, host := range o.Hosts {
 		h := host
-		go func() {
-			for i := 0; i < o.Try; i++ {
+		for i := 0; i < o.Try; i++ {
+			go func() {
 				rtt, err := o.ResolveOnce(h)
 				c <- &response{
 					rtt:  rtt,
 					host: h,
 					err:  err,
 				}
-			}
-		}()
+			}()
+			time.Sleep(o.Interval)
+		}
 	}
 	onError := float64(0)
 	onSuccess := float64(0)
