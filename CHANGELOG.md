@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.0.9](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.8...v0.0.9) - 2026-02-20
+- Create dependabot.yml by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/5
+- ci: bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/8
+- add main_test by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/9
+- go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/7
+
 ## [v0.0.8](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.7...v0.0.8) - 2025-09-30
 - add interval option. parallel every resolvation by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/3
 
