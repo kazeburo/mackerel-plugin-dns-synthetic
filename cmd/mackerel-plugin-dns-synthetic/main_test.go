@@ -139,8 +139,16 @@ func TestFetchMetricsSuccess(t *testing.T) {
 	if metrics["success"] != 2 {
 		t.Fatalf("success should be 2, got %v", metrics["success"])
 	}
-	if metrics["max"] < metrics["mean"] {
-		t.Fatalf("max should be >= mean, got max=%v mean=%v", metrics["max"], metrics["mean"])
+	mean, ok := metrics["mean"]
+	if !ok {
+		t.Fatalf("mean metric is missing")
+	}
+	max, ok := metrics["max"]
+	if !ok {
+		t.Fatalf("max metric is missing")
+	}
+	if max < mean {
+		t.Fatalf("max should be >= mean, got max=%v mean=%v", max, mean)
 	}
 }
 
