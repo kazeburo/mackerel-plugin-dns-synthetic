@@ -45,7 +45,12 @@ func dnsHandler(qname string, rcode int, ip string) dns.HandlerFunc {
 		}
 		m.Rcode = rcode
 		if rcode == dns.RcodeSuccess && ip != "" {
-			rr, _ := dns.NewRR(fmt.Sprintf("%s 60 IN A %s", qname, ip))
+			rr, err := dns.NewRR(fmt.Sprintf("%s 60 IN A %s", qname, ip))
+			if err != nil {
+				m.Rcode = dns.RcodeServerFailure
+				_ = w.WriteMsg(m)
+				return
+			}
 			m.Answer = []dns.RR{rr}
 		}
 		_ = w.WriteMsg(m)
