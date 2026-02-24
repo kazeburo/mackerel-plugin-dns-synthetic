@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.10](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.9...v0.0.10) - 2026-02-24
+- ci: bump goreleaser/goreleaser-action from 6.4.0 to 7.0.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/10
+- go: bump golang.org/x/text from 0.32.0 to 0.34.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/11
+
 ## [v0.0.9](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.8...v0.0.9) - 2026-02-20
 - Create dependabot.yml by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/5
 - ci: bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/8
