@@ -17,7 +17,7 @@ require (
 require (
 	github.com/mackerelio/golib v1.2.1 // indirect
 	github.com/miekg/dns v1.1.72
-	github.com/montanaflynn/stats v0.8.2
+	github.com/montanaflynn/stats v0.9.0
 	golang.org/x/sys v0.41.0 // indirect
 	golang.org/x/text v0.35.0
 )
