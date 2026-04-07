@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/jessevdk/go-flags v1.6.1
-	github.com/mackerelio/go-mackerel-plugin v0.1.5
+	github.com/mackerelio/go-mackerel-plugin v0.1.6
 )
 
 require (
