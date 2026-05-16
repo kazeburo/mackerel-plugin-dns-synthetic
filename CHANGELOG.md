@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.0.12](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.11...v0.0.12) - 2026-05-16
+- go: bump github.com/montanaflynn/stats from 0.8.2 to 0.9.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/17
+- ci: bump actions/setup-go from 6.3.0 to 6.4.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/19
+- go: bump github.com/mackerelio/go-mackerel-plugin from 0.1.5 to 0.1.6 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/21
+- ci: bump Songmu/tagpr from 1.17.1 to 1.18.1 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/20
+- go: bump golang.org/x/text from 0.35.0 to 0.36.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/22
+- ci: bump Songmu/tagpr from 1.18.1 to 1.18.2 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/23
+- go: bump golang.org/x/text from 0.36.0 to 0.37.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/25
+- ci: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/24
+
 ## [v0.0.11](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.10...v0.0.11) - 2026-03-12
 - ci: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/14
 - go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/16
