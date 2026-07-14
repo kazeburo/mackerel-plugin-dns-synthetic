@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.0.13](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.12...v0.0.13) - 2026-07-10
+
+- ci: bump the dependencies group across 1 directory with 3 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/31
+- Update Dependabot schedule and settings by @kazeburo in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/33
+- go: bump the dependencies group with 5 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/34
+- go: bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/35
+
 ## [v0.0.12](https://github.com/kazeburo/mackerel-plugin-dns-synthetic/compare/v0.0.11...v0.0.12) - 2026-06-10
 
 - go: bump github.com/montanaflynn/stats from 0.8.2 to 0.9.0 in the dependencies group by @dependabot[bot] in https://github.com/kazeburo/mackerel-plugin-dns-synthetic/pull/17
